@@ -48,12 +48,13 @@ int main()
  	calculateStats(data1, data2, data3, data4, &average, &sum);
 	printf("The average and sum of the variables: %lf  %lf \n", average, sum);
 
-	double array[7] = { 0 };
-	int numArray = 7;
+	const int kNumArray = 7;
+	double array[kNumArray] = { 0 };
+	int numArray = kNumArray;
 	double sumArray = 0.0;
 	double aveArray = 0.0;
 
-	for (int i = 0; i < 7; i++)
+	for (int i = 0; i < kNumArray; i++)
 	{
 		printf("Enter a number: ");
 		if (getDouble(&array[i]) != 1)
@@ -62,13 +63,13 @@ int main()
 		}
 	}
 	
-	calculateArrayStats(array, 7, &sumArray, &aveArray);
+	calculateArrayStats(array, kNumArray, &sumArray, &aveArray);
 	printf("The average and sum of the array elements: %lf  %lf \n", aveArray, sumArray);
 
-	fillArray(array, 7, 40.0);
-	for (int i = 0; i < 7; i++)
+	fillArray(array, kNumArray, 40.0);
+	for (int i = 0; i < kNumArray; i++)
 	{
-		if ( i < 6)
+		if ( i < kNumArray-1)
 		{
 			printf("%lf, ", array[i]);
 		}
