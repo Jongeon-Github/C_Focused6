@@ -9,6 +9,10 @@
 
 #include <stdio.h>
 
+#define kNumArray 7
+#define kCalAverage 4.0
+#define kFillValue 40.0
+
 int getDouble(double *pNumber);
 void calculateStats(double d1, double d2, double d3, double d4, double *pAverage, double *pSum);
 void calculateArrayStats(double values[], int numArray, double *pSum, double *pAverage);
@@ -48,9 +52,8 @@ int main()
  	calculateStats(data1, data2, data3, data4, &average, &sum);
 	printf("The average and sum of the variables: %lf  %lf \n", average, sum);
 
-	const int kNumArray = 7;
+	//const int kNumArray = 7;
 	double array[kNumArray] = { 0 };
-	int numArray = kNumArray;
 	double sumArray = 0.0;
 	double aveArray = 0.0;
 
@@ -66,7 +69,7 @@ int main()
 	calculateArrayStats(array, kNumArray, &sumArray, &aveArray);
 	printf("The average and sum of the array elements: %lf  %lf \n", aveArray, sumArray);
 
-	fillArray(array, kNumArray, 40.0);
+	fillArray(array, kNumArray, kFillValue);
 	for (int i = 0; i < kNumArray; i++)
 	{
 		if ( i < kNumArray-1)
@@ -129,7 +132,7 @@ int getDouble(double *pNumber)
 void calculateStats(double d1, double d2, double d3, double d4, double *pAverage, double *pSum)
 {
 	*pSum = d1 + d2 + d3 + d4;
-	*pAverage = *pSum / 4.0;
+	*pAverage = *pSum / kCalAverage;
 }
 
 
