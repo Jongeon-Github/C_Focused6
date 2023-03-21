@@ -52,7 +52,6 @@ int main()
  	calculateStats(data1, data2, data3, data4, &average, &sum);
 	printf("The average and sum of the variables: %lf  %lf \n", average, sum);
 
-	//const int kNumArray = 7;
 	double array[kNumArray] = { 0 };
 	double sumArray = 0.0;
 	double aveArray = 0.0;
